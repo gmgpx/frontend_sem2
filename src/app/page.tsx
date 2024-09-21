@@ -1,11 +1,10 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Package, PackageX, TimerReset } from "lucide-react";
 import { Bars } from "@/components/chart/Bars";
 import Reports from "@/components/reports/reports";
-import Line from "@/components/chart/Line";
 import LineChart from "@/components/chart/Line";
 
 export default function App() {

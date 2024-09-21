@@ -1,11 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { UserSearch } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function Users() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           
           {/* Card Exemplo */}
           <Card className="p-4 border rounded-lg shadow-md">
@@ -17,13 +16,14 @@ export default function Users() {
               </Avatar>
               
               {/* Nome e Cargo */}
-              <div className="text-center mb-4">
-                <h2 className="text-lg font-semibold">Gustavo Monteiro</h2>
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold">Gustavo</h2>
+                <h2 className="text-lg font-semibold">Monteiro</h2>
                 <p className="text-sm text-gray-600">Estágiario</p>
               </div>
 
               {/* User Information */}
-              <div className="text-center mb-6">
+              <div className="mb-6">
                 <p className="text-base font-bold">Nível de acesso:</p>
                 <p className="text-sm text-gray-500 mb-2">Administrador</p>
                 <p className="text-base font-bold">Contato:</p>
@@ -31,7 +31,7 @@ export default function Users() {
               </div>
 
               {/* Buttons */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-end">
                 <Button>Editar</Button>
                 <Button variant="destructive">Deletar</Button>
               </div>
@@ -44,8 +44,8 @@ export default function Users() {
                 <AvatarImage src="https://avatars.githubusercontent.com/u/123522658?v=4" />
               </Avatar>
 
-              <div className="text-center mb-4">
-                <h2 className="text-lg font-semibold">Kelvin Pato</h2>
+              <div className="flex-1 text-center mb-4">
+                <h2 className="text-lg font-semibold">Kelvin Pato Jr</h2>
                 <p className="text-sm text-gray-600">Estágiario</p>
               </div>
 
@@ -56,7 +56,7 @@ export default function Users() {
                 <p className="text-sm text-gray-500 mb-2">teste@gmail.com</p>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-end">
                 <Button>Editar</Button>
                 <Button variant="destructive">Deletar</Button>
               </div>
@@ -70,7 +70,7 @@ export default function Users() {
               </Avatar>
 
               <div className="text-center mb-4">
-                <h2 className="text-lg font-semibold">CarecAcademy</h2>
+                <h2 className="text-lg font-semibold">Careca Academy</h2>
                 <p className="text-sm text-gray-600">Lead</p>
               </div>
 
@@ -95,7 +95,7 @@ export default function Users() {
               </Avatar>
 
               <div className="text-center mb-4">
-                <h2 className="text-lg font-semibold">Rafão</h2>
+                <h2 className="text-lg font-semibold">Rafão DataOps</h2>
                 <p className="text-sm text-gray-600">Co-Lead</p>
               </div>
 
@@ -120,7 +120,7 @@ export default function Users() {
               </Avatar>
 
               <div className="text-center mb-4">
-                <h2 className="text-lg font-semibold">Newtão</h2>
+                <h2 className="text-lg font-semibold">Newtão Policial</h2>
                 <p className="text-sm text-gray-600">PM</p>
               </div>
 
