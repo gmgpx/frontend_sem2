@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ChartArea, ClipboardList, Eye, Home, LogOut, SunMoon, Users } from 'lucide-react'
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
+import { usePathname } from "next/navigation";
+import "@/styles/styles.css";
+
 
 export function Sidebar() {
   const [dark, setDark] = useState(false)
@@ -18,6 +21,8 @@ export function Sidebar() {
       document.body.classList.remove('dark')
     }
   }, [dark])
+  
+  const pathname = usePathname();
 
     return (
         <div className={`flex w-full flex-col ${dark ? 'bg-black text-white' : 'bg-white text-black'}`}>
@@ -27,7 +32,7 @@ export function Sidebar() {
             <nav className='flex flex-col items-center gap-4 px-2 py-5'>
                 <TooltipProvider>
                     <Link 
-                    href="/pages/login"
+                    href="#"
                     className='flex h-10 w-10 shrink-0 items-center justify-center bg-primary
                     text-primary-foreground rounded-full'
                     >
@@ -39,8 +44,7 @@ export function Sidebar() {
                         <TooltipTrigger asChild>
                         <Link 
                     href="/"
-                    className='flex h-10 w-10 shrink-0 items-center justify-center rounded-lg
-                    text-muted-foreground transition-colors hover:text-foreground'
+                    className={`sidebar ${ pathname === '/' ? 'active' : '' }`}
                     >
                         <Home className='h-5 w-5'/>
                         <span className='sr-only'>Icone Início</span>
@@ -53,8 +57,7 @@ export function Sidebar() {
                         <TooltipTrigger asChild>
                         <Link 
                     href="/pages/charts"
-                    className='flex h-10 w-10 shrink-0 items-center justify-center rounded-lg
-                    text-muted-foreground transition-colors hover:text-foreground'
+                    className={`sidebar ${ pathname === '/pages/charts' ? 'active' : '' }`}
                     >
                         <ChartArea className='h-5 w-5'/>
                         <span className='sr-only'>Icone Dashboards</span>
@@ -67,8 +70,7 @@ export function Sidebar() {
                         <TooltipTrigger asChild>
                         <Link 
                     href="/pages/reports"
-                    className='flex h-10 w-10 shrink-0 items-center justify-center rounded-lg
-                    text-muted-foreground transition-colors hover:text-foreground'
+                    className={`sidebar ${ pathname === '/pages/reports' ? 'active' : '' }`}
                     >
                         <ClipboardList className='h-5 w-5'/>
                         <span className='sr-only'>Icone Relatórios</span>
@@ -81,8 +83,7 @@ export function Sidebar() {
                         <TooltipTrigger asChild>
                         <Link 
                     href="/pages/users"
-                    className='flex h-10 w-10 shrink-0 items-center justify-center rounded-lg
-                    text-muted-foreground transition-colors hover:text-foreground'
+                    className={`sidebar ${ pathname === '/pages/users' ? 'active' : '' }`}
                     >
                         <Users className='h-5 w-5'/>
                         <span className='sr-only'>Icone Usuarios</span>
@@ -113,7 +114,7 @@ export function Sidebar() {
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Link 
-                            href="#"
+                            href="/pages/login"
                             className='flex h-10 w-10 shrink-0 items-center justify-center 
                             rounded-lg text-muted-foreground transition-colors hover:text-red-500'
                             >
